@@ -17,7 +17,7 @@ export class ContactController{
         });
     }
 
-    public getContacts (req: Request, res: Response) {           
+    public getContacts (req: RequestTyped<{contactId: number}>, res: Response) {           
         Contact.find({}, (err, contact) => {
             if(err){
                 res.send(err);
@@ -26,7 +26,7 @@ export class ContactController{
         });
     }
 
-    public getContactWithID (req: Request, res: Response) {           
+    public getContactWithID (req: RequestTyped<{contactId: number}>, res: Response) {           
         Contact.findById(req.params.contactId, (err, contact) => {
             if(err){
                 res.send(err);
@@ -53,4 +53,8 @@ export class ContactController{
         });
     }
     
+}
+
+ interface RequestTyped<T> extends Request{
+
 }
