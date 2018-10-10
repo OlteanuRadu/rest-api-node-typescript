@@ -19,14 +19,14 @@ npm install -g typescript ts-node
 
 ## Getting Started
 
-You should install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) on your local machine, or use other services such as [mLab](https://mlab.com/) or [Compose](https://www.compose.com/compare/mongodb)
+You should install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) on your local machine, or use other services such as [mLab](https://mlab.com/),[Compose](https://www.compose.com/compare/mongodb), [Azure](https://azure.microsoft.com/en-us/)
 
 After that, you will have to replace the mongoURL with your MongoDB address in *lib/app.ts*
 
 ## Clone this repository
 
 ```
-git clone git@github.com:dalenguyen/rest-api-node-typescript.git .
+git clone https://github.com/OlteanuRadu/rest-api-node-typescript.git
 ```
 
 Then install the dependencies
@@ -64,5 +64,3 @@ Send GET request to http://localhost:3000/contact/
 The default URL is: *https://localhost:3000*
 
 The key and cert in the config folder is for testing purpose only. You should generate your own.
-
-*Reference from [Lynda.com](https://www.lynda.com/Node-js-tutorials/Next-steps/633869/671263-4.html)*
