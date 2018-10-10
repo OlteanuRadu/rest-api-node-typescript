@@ -2,6 +2,9 @@ import * as mongoose from 'mongoose';
 import { ContactSchema } from '../models/crmModel';
 import { Request, Response } from 'express';
 
+interface RequestTyped<T> extends Request { 
+    params: T
+}
 const Contact = mongoose.model('Contact', ContactSchema);
 
 export class ContactController{
@@ -26,7 +29,7 @@ export class ContactController{
         });
     }
 
-    public getContactWithID (req: Request, res: Response) {           
+    public getContactWithID (req: RequestTyped<{contactId: number }>, res: Response) {           
         Contact.findById(req.params.contactId, (err, contact) => {
             if(err){
                 res.send(err);
@@ -45,7 +48,7 @@ export class ContactController{
     }
 
     public deleteContact (req: Request, res: Response) {           
-        Contact.remove({ _id: req.params.contactId }, (err, contact) => {
+        Contact.remove({ _id: req.params.contactId }, (err) => {
             if(err){
                 res.send(err);
             }

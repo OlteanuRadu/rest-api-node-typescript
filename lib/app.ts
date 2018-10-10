@@ -25,7 +25,7 @@ class App {
     }
 
     private mongoSetup(): void{
-        mongoose.Promise = global.Promise;
+        (mongoose as any).Promise = global.Promise;
         mongoose.connect("mongodb://vmadmin:CNhqRKztEdGPtvVNwxrtYfKx7slVbtHpC1BuIhJNfjm9LXyl0AW8C9holQhKN9lq9hPVbQMX1lBezWjS6Trptw%3D%3D@vmadmin.documents.azure.com:10255/?ssl=true");        
     }
 
